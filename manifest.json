@@ -5,27 +5,25 @@
  	"description": "Provides an alternate method of viewing your tumblr updates",
  	"version": "0.0",
  	
- 	"background": {
- 		"page": "background.html"  
- 	},
- 	
- 	"content_scripts": {
- 		"matches": ["*tumblr.com/dashboard/"],
+ 	"content_scripts": [{
+ 		"matches": ["*://www.tumblr.com/*"],
  		"js": [
  		    "jquery.min.js", 
  		    "tumblr.js", 
  		    "chrome_ex_oauth.js", 
- 		    "chrome_ex_oathsimple.js", 
+ 		    "chrome_ex_oauthsimple.js", 
  		    "onload.js", 
+ 		    "cxoauth.js",
  		    "ubf.js"
  		]  
- 	},
+ 	}],
  	
  	"browser_action": {
  		"default_icon": "icon.png",
  		"default_popup": "popup.html",
  		"default_title": "I'm UBF!"
  	},
+ 	
  	"permissions": [
  		"activeTab",
  		"tabs",
